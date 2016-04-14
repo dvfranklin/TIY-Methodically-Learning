@@ -67,6 +67,21 @@ public class Dungeon {
      * @param levels The new number of levels to assign to Dungeon
      */
     public void setDungeonLevels(int levels){
-        this.dungeonLevels = levels;
+        if(validDungeonLevels(levels)){
+            this.dungeonLevels = levels;
+        }
+    }
+
+    /**
+     * Makes sure new value of Dungeon levels is positive before setting
+     * @param levels Number of levels attempting to be passed to setter
+     * @return True if valid, false if not
+     */
+    public boolean validDungeonLevels(int levels){
+        if(levels > 0){
+            return true;
+        } else{
+            return false;
+        }
     }
 }

@@ -96,6 +96,21 @@ public class Quest {
      * @param exp The new experience reward to assign to Quest
      */
     public void setQuestExpReward(int exp){
-        this.questExpReward = exp;
+        if(validExpReward(exp)) {
+            this.questExpReward = exp;
+        }
+    }
+
+    /**
+     * Make sure Quest exp reward is valid
+     * @param exp Tests for a positive value
+     * @return True if valid, false if not
+     */
+    public boolean validExpReward(int exp){
+        if(exp > 0){
+            return true;
+        } else {
+            return false;
+        }
     }
 }

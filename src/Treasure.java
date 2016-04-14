@@ -68,6 +68,21 @@ public class Treasure {
      * @param value The new value to assign to Treasure
      */
     public void setTreasureValue(int value){
-        this.treasureValue = value;
+        if(validTreasureValue(value)) {
+            this.treasureValue = value;
+        }
+    }
+
+    /**
+     * Tests for positive value for Treasure object before setting
+     * @param value Attempted new value
+     * @return True if valid, false if not
+     */
+    public boolean validTreasureValue(int value){
+        if(value > 0){
+            return true;
+        } else{
+            return false;
+        }
     }
 }

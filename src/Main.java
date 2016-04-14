@@ -3,7 +3,6 @@
 public class Main {
     public static void main(String[] args){
 
-        Display output = new Display();
 
         // Initialize two Player objects (name, health, mana, gold)
         Player playerOne = new Player("Mario", 100, 25, 0);
@@ -27,40 +26,43 @@ public class Main {
 
 
         // Display the toString versions of each pair of objects
-        output.printOutput(playerOne, playerTwo);
-        output.printOutput(troll, shrek);
-        output.printOutput(ring, amulet);
-        output.printOutput(rescue, explore);
-        output.printOutput(castle, mausoleum);
+        Display.printOutput(playerOne, playerTwo);
+        Display.printOutput(troll, shrek);
+        Display.printOutput(ring, amulet);
+        Display.printOutput(rescue, explore);
+        Display.printOutput(castle, mausoleum);
 
 
         // Mario transforms into Wario, who is apparently rich
         playerOne.setPlayerName("Wario");
         playerOne.setPlayerGold(100);
+        playerOne.setPlayerHealth(-5);
 
         // Cave troll moves to the forest and becomes stronger
         troll.setEnemyType("forest troll");
-        troll.setEnemyHealth(60);
+        troll.setEnemyHealth(-60);
 
         // The amulet transforms into super valuable ruby
         amulet.setTreasureName("ruby amulet");
-        amulet.setTreasureValue(200);
+        amulet.setTreasureValue(-10);
 
         // Change Quest location
         explore.setQuestName("Explore the Jungle");
+        explore.setQuestExpReward(-5);
 
         // The mausoleum gets deeper
         mausoleum.setDungeonLevels(10);
+        castle.setDungeonLevels(-2);
 
         System.out.println("And now, after some changes:");
         System.out.println();
 
         // Display the toString versions of each pair of objects
-        output.printOutput(playerOne, playerTwo);
-        output.printOutput(troll, shrek);
-        output.printOutput(ring, amulet);
-        output.printOutput(rescue, explore);
-        output.printOutput(castle, mausoleum);
+        Display.printOutput(playerOne, playerTwo);
+        Display.printOutput(troll, shrek);
+        Display.printOutput(ring, amulet);
+        Display.printOutput(rescue, explore);
+        Display.printOutput(castle, mausoleum);
 
     }
 

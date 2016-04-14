@@ -7,7 +7,7 @@ public class Display {
      * @param firstObject First object to be displayed
      * @param secondObject Second object to be displayed
      */
-    public void printOutput(Object firstObject, Object secondObject) {
+    public static void printOutput(Object firstObject, Object secondObject) {
 
         System.out.println(firstObject);
         System.out.println(secondObject);

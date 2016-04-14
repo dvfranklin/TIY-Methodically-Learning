@@ -68,6 +68,21 @@ public class Enemy {
      * @param health The new amount of health to assign to Enemy
      */
     public void setEnemyHealth(int health){
-        this.enemyHealth = health;
+        if(validEnemyHealth(health)){
+            this.enemyHealth = health;
+        }
+    }
+
+    /**
+     * Checks new enemy health before setting
+     * @param health New health value attempting to be set
+     * @return True if valid, false if not
+     */
+    public boolean validEnemyHealth(int health){
+        if(health > 0){
+            return true;
+        } else{
+            return false;
+        }
     }
 }

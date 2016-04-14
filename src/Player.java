@@ -98,8 +98,10 @@ public class Player {
      *
      * @param health The new amount of hit points to assign to Player
      */
-    public void setPlayerHealth(int health){
-        this.playerHealth = health;
+    public void setPlayerHealth(int health) {
+        if (validPlayerHealth(health)) {
+            this.playerHealth = health;
+        }
     }
 
     /**
@@ -118,5 +120,18 @@ public class Player {
      */
     public void setPlayerGold(int gold){
         this.playerGold = gold;
+    }
+
+    /**
+     * Make sure Player health is valid before setting
+     * @param health Integer attempting to be set as new health
+     * @return True if valid, false if not
+     */
+    public boolean validPlayerHealth(int health){
+        if(health > 0){
+            return true;
+        } else{
+            return false;
+        }
     }
 }
